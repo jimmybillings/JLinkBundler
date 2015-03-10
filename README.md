@@ -1,4 +1,4 @@
-jQuery-Page-Search
+JLinkBundler
 ==================
 
-This is a jQuery plugin that allows you to search a page for links - it gathers all the information regarding the links and stuffs them into an array - on completion it rebuilds the results into a list at the top.
+Searches any html element and finds links inside that match a users text input in a basic form. It then rebuilds the links into a list and prepends it to the body of the page or another designated element. 
