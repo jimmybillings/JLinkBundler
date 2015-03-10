@@ -18,20 +18,23 @@
       return this.each(function() {
  
         //Assign items to be searched into variables
-        var o =options;
-        var obj = $(this);                
-        var items = $(o.searchItems, obj);
+        var o, obj, items, text;
         var arr = [];
+        o = options;
+        obj = $(this);                
+        items = $(o.searchItems, obj);
+        arr = [];
         //convert to lowercase 
-        var text = $(o.inputBox).val().toLowerCase();
+        text = $(o.inputBox).val().toLowerCase();
  
         //Search through each possible search result
         $(items).each(function() {
           //convert to lowercase 
-          var lowerText = $(this).text().toLowerCase();
+          var lowerText, noSpecialChars;
+          lowerText = $(this).text().toLowerCase();
  
           //take out any special characters
-          var noSpecialChars = lowerText.replace(/[^a-zA-Z 0-9]+/g,'');
+          noSpecialChars = lowerText.replace(/[^a-zA-Z 0-9]+/g,'');
           //If a match is found push text and link into array
           if (noSpecialChars.indexOf(text)>=0 ){
             arr.push($(this).text()+";"+$(this).children('a').attr('href'));
